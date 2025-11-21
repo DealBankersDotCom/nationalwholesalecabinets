@@ -263,13 +263,35 @@ function carouselShow() {
 <section id="design" style="text-align:center; padding:60px; background:#ecf0f1;">
   <h2>Upload Your Blueprint or Floor Plan</h2>
   <p>We'll help you design your kitchen, laundry, mudroom, or bathroom — and get wholesale pricing.</p>
-  <form action="#" method="POST" enctype="multipart/form-data" style="margin-top:20px;">
+
+  <!-- 🔹 UPDATED FORM (Send uploads straight to your email) -->
+  <form action="https://formsubmit.co/aptbidsonline@gmail.com" 
+        method="POST" 
+        enctype="multipart/form-data" 
+        style="margin-top:20px;">
+
+    <!-- Hidden settings -->
+    <input type="hidden" name="_subject" value="New Blueprint Upload – Wholesale Cabinets Lead">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://nationalwholesalecabinets.com/thankyou.html">
+
+    <!-- File Upload -->
     <input type="file" name="blueprintFile" accept=".pdf,.jpg,.png,.jpeg" required />
     <br><br>
+
+    <!-- Email -->
     <input type="email" name="email" placeholder="Your Email" required style="padding:10px; width:280px;" /><br><br>
+
+    <!-- Comments (Optional) -->
+    <textarea name="notes" placeholder="Project notes, dimensions, details..." 
+              style="padding:10px; width:280px; height:80px;"></textarea><br><br>
+
+    <!-- Submit Button -->
     <button type="submit" class="btn-primary">Submit Design Request</button>
   </form>
 </section>
+
 
 <footer>
   <p>National Wholesale Cabinets • Nationwide Shipping • Custom Design Help • Contractor Pricing Available</p>
