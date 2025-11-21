@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>National Wholesale Cabinets</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"/>
+
   <style>
     body {
       margin: 0;
@@ -19,6 +20,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     header nav a {
       color: white;
@@ -26,19 +30,51 @@
       text-decoration: none;
       font-weight: 500;
     }
+
+    /* 🔹 HERO VIDEO BANNER */
     .hero {
-      background: url('https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=1600') center/cover no-repeat;
-      height: 80vh;
+      position: relative;
+      height: 88vh;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       color: white;
+      text-align: center;
+    }
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+    }
+    /* 🔹 Dark overlay for text clarity */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.45);
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+      padding: 25px;
     }
     .hero h1 {
-      font-size: 3.5rem;
-      max-width: 780px;
+      font-size: 3.2rem;
       line-height: 1.2;
+      margin-bottom: 20px;
     }
     .btn-primary {
       background: #2980b9;
@@ -48,6 +84,18 @@
       text-decoration: none;
       font-size: 1.1rem;
     }
+
+    /* MOBILE VIDEO FALLBACK */
+    @media (max-width: 768px) {
+      .hero video {
+        display: none;
+      }
+      .hero {
+        background: url('https://images.unsplash.com/photo-1595526114035-1099f9c472bb') center/cover no-repeat;
+      }
+    }
+
+    /* Style Grid */
     .style-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -67,6 +115,7 @@
       height: 200px;
       object-fit: cover;
     }
+
     footer {
       background: #2c3e50;
       color: white;
@@ -76,6 +125,7 @@
   </style>
 </head>
 <body>
+
   <header>
     <h2>National Wholesale Cabinets</h2>
     <nav>
@@ -86,13 +136,18 @@
     </nav>
   </header>
 
+  <!-- 🔹 HERO VIDEO SECTION -->
   <section class="hero">
-    <div>
+    <video autoplay muted loop playsinline>
+      <source src="images/banner.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
       <h1>Wholesale Cabinets, Custom Designs, and Nationwide Delivery</h1>
-      <p>Raised Panel • Shaker • Modern Slab • Inset • Euro | Custom Colors • Soft-Close • Luxury Hardware</p>
+      <p>Raised Panel • Shaker • Modern Slab • Inset • Euro • Custom Colors • Soft-Close • Luxury Hardware</p>
       <a href="#design" class="btn-primary">Upload Your Floorplan for Free Design Help</a>
     </div>
   </section>
+
 <section style="display:flex; flex-wrap:wrap; padding:60px; background:#f9f9f9; align-items:center;">
 
   <!-- Carousel Section -->
@@ -115,8 +170,8 @@
 
   <!-- Form Section -->
   <div style="flex:1; min-width:360px; padding:40px; background:white; border-radius:10px; box-shadow:0 0 12px rgba(0,0,0,0.1); margin:15px;">
-    <h2 style="margin-bottom:10px;">Start Your Design & Pricing</h2>
-    <p style="margin-bottom:20px;">Upload plans later. Start here:</p>
+    <h2>Start Your Design & Pricing</h2>
+    <p>Upload plans later. Start here:</p>
 
     <form action="#" method="POST">
       <label>ZIP Code:</label><br />
@@ -179,58 +234,56 @@ function carouselShow() {
 }
 </script>
 
-  <!-- Cabinet Style Display -->
-  <section id="styles">
-    <h2 style="text-align:center; margin-top:40px;">Browse Cabinet Styles</h2>
-    <div class="style-grid">
+<section id="styles">
+  <h2 style="text-align:center; margin-top:40px;">Browse Cabinet Styles</h2>
+  <div class="style-grid">
 
-      <div class="style-card">
-        <img src="https://images.unsplash.com/photo-1600490047271-309c5f3d2ade" alt="Shaker Style">
-        <h3>Shaker</h3>
-      </div>
-
-      <div class="style-card">
-        <img src="https://images.unsplash.com/photo-1595526114035-1099f9c472bb" alt="Raised Panel">
-        <h3>Raised Panel</h3>
-      </div>
-
-      <div class="style-card">
-        <img src="https://images.unsplash.com/photo-1591195854049-2e2e3d3b1a7d" alt="Modern Flat/Slab">
-        <h3>Modern Slab / Euro</h3>
-      </div>
-
-      <div class="style-card">
-        <img src="https://images.unsplash.com/photo-1565182999561-18d8f1d9da6b" alt="Inset Cabinets">
-        <h3>Inset Premium</h3>
-      </div>
-
-      <div class="style-card">
-        <img src="https://images.unsplash.com/photo-1588854337119-3e7d53c24f9a" alt="Rustic Wood">
-        <h3>Rustic / Knotty Alder</h3>
-      </div>
-
-      <div class="style-card">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Custom">
-        <h3>Custom Built Cabinets</h3>
-      </div>
+    <div class="style-card">
+      <img src="https://images.unsplash.com/photo-1600490047271-309c5f3d2ade" alt="Shaker Style">
+      <h3>Shaker</h3>
     </div>
-  </section>
 
-  <!-- Blueprint Upload Section -->
-  <section id="design" style="text-align:center; padding:60px; background:#ecf0f1;">
-    <h2>Upload Your Blueprint or Floor Plan</h2>
-    <p>We'll help you design your kitchen, laundry, mudroom, or bathroom — and get wholesale pricing.</p>
-    <form action="#" method="POST" enctype="multipart/form-data" style="margin-top:20px;">
-      <input type="file" name="blueprintFile" accept=".pdf,.jpg,.png,.jpeg" required />
-      <br><br>
-      <input type="email" name="email" placeholder="Your Email" required style="padding:10px; width:280px;" /><br><br>
-      <button type="submit" class="btn-primary">Submit Design Request</button>
-    </form>
-  </section>
+    <div class="style-card">
+      <img src="https://images.unsplash.com/photo-1595526114035-1099f9c472bb" alt="Raised Panel">
+      <h3>Raised Panel</h3>
+    </div>
 
-  <footer>
-    <p>National Wholesale Cabinets • Nationwide Shipping • Custom Design Help • Contractor Pricing Available</p>
-  </footer>
+    <div class="style-card">
+      <img src="https://images.unsplash.com/photo-1591195854049-2e2e3d3b1a7d" alt="Modern Flat/Slab">
+      <h3>Modern Slab / Euro</h3>
+    </div>
+
+    <div class="style-card">
+      <img src="https://images.unsplash.com/photo-1565182999561-18d8f1d9da6b" alt="Inset Cabinets">
+      <h3>Inset Premium</h3>
+    </div>
+
+    <div class="style-card">
+      <img src="https://images.unsplash.com/photo-1588854337119-3e7d53c24f9a" alt="Rustic Wood">
+      <h3>Rustic / Knotty Alder</h3>
+    </div>
+
+    <div class="style-card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Custom">
+      <h3>Custom Built Cabinets</h3>
+    </div>
+  </div>
+</section>
+
+<section id="design" style="text-align:center; padding:60px; background:#ecf0f1;">
+  <h2>Upload Your Blueprint or Floor Plan</h2>
+  <p>We'll help you design your kitchen, laundry, mudroom, or bathroom — and get wholesale pricing.</p>
+  <form action="#" method="POST" enctype="multipart/form-data" style="margin-top:20px;">
+    <input type="file" name="blueprintFile" accept=".pdf,.jpg,.png,.jpeg" required />
+    <br><br>
+    <input type="email" name="email" placeholder="Your Email" required style="padding:10px; width:280px;" /><br><br>
+    <button type="submit" class="btn-primary">Submit Design Request</button>
+  </form>
+</section>
+
+<footer>
+  <p>National Wholesale Cabinets • Nationwide Shipping • Custom Design Help • Contractor Pricing Available</p>
+</footer>
 
 </body>
 </html>
