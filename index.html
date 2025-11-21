@@ -93,6 +93,91 @@
       <a href="#design" class="btn-primary">Upload Your Floorplan for Free Design Help</a>
     </div>
   </section>
+<section style="display:flex; flex-wrap:wrap; padding:60px; background:#f9f9f9; align-items:center;">
+
+  <!-- Carousel Section -->
+  <div style="flex:1; min-width:420px; text-align:center;">
+    <div class="carousel-container">
+      <div class="carousel-slide fade">
+        <img src="https://images.unsplash.com/photo-1588854337119-3e7d53c24f9a" alt="Raised Panel" />
+      </div>
+      <div class="carousel-slide fade">
+        <img src="https://images.unsplash.com/photo-1591126140583-c9a648b6c57e" alt="Shaker White" />
+      </div>
+      <div class="carousel-slide fade">
+        <img src="https://images.unsplash.com/photo-1595526114035-1099f9c472bb" alt="Modern Flat" />
+      </div>
+      <div class="carousel-slide fade">
+        <img src="https://images.unsplash.com/photo-1565182999561-18d8f1d9da6b" alt="Inset Premium" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Form Section -->
+  <div style="flex:1; min-width:360px; padding:40px; background:white; border-radius:10px; box-shadow:0 0 12px rgba(0,0,0,0.1); margin:15px;">
+    <h2 style="margin-bottom:10px;">Start Your Design & Pricing</h2>
+    <p style="margin-bottom:20px;">Upload plans later. Start here:</p>
+
+    <form action="#" method="POST">
+      <label>ZIP Code:</label><br />
+      <input type="text" name="zip" placeholder="Enter ZIP" required style="width:100%; padding:10px; margin-bottom:15px;" />
+
+      <label>Project Type:</label><br />
+      <select name="projectType" required style="width:100%; padding:10px; margin-bottom:20px;">
+        <option value="">Select Project Type</option>
+        <option>Kitchen</option>
+        <option>Bathroom Vanity</option>
+        <option>Laundry Room</option>
+        <option>Closet Built-in</option>
+        <option>Garage Cabinets</option>
+        <option>Custom / Other</option>
+      </select>
+
+      <button type="submit" style="width:100%; padding:12px; background:#2980b9; color:white; border:none; font-size:1rem; cursor:pointer;">
+        Start Design
+      </button>
+    </form>
+
+    <p style="margin-top:18px; font-size:0.9rem;">No commitment | Fast quote | Upload plans later</p>
+  </div>
+
+</section>
+
+<!-- Carousel CSS -->
+<style>
+.carousel-container {
+  max-width: 480px;
+  position: relative;
+  margin: auto;
+}
+.carousel-slide img {
+  width: 100%;
+  border-radius: 10px;
+}
+.fade {
+  animation: fadeEffect 2s ease-in-out forwards;
+}
+@keyframes fadeEffect {
+  from {opacity: .4;} 
+  to {opacity: 1;}
+}
+</style>
+
+<!-- Carousel JavaScript -->
+<script>
+let slideIndex = 0;
+carouselShow();
+function carouselShow() {
+  let slides = document.getElementsByClassName("carousel-slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(carouselShow, 3000); // Change image every 3 seconds
+}
+</script>
 
   <!-- Cabinet Style Display -->
   <section id="styles">
