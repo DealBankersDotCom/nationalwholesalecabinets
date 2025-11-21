@@ -31,7 +31,7 @@
       font-weight: 500;
     }
 
-    /* 🔹 HERO VIDEO BANNER */
+    /* HERO VIDEO BANNER */
     .hero {
       position: relative;
       height: 88vh;
@@ -54,7 +54,6 @@
       transform: translate(-50%, -50%);
       object-fit: cover;
     }
-    /* 🔹 Dark overlay for text clarity */
     .hero::after {
       content: "";
       position: absolute;
@@ -91,7 +90,7 @@
         display: none;
       }
       .hero {
-        background: url('https://images.unsplash.com/photo-1595526114035-1099f9c472bb') center/cover no-repeat;
+        background: url('images/raised panel.png') center/cover no-repeat;
       }
     }
 
@@ -136,7 +135,7 @@
     </nav>
   </header>
 
-  <!-- 🔹 HERO VIDEO SECTION -->
+  <!-- HERO VIDEO SECTION -->
   <section class="hero">
     <video autoplay muted loop playsinline>
       <source src="images/banner.mp4" type="video/mp4" />
@@ -154,16 +153,16 @@
   <div style="flex:1; min-width:420px; text-align:center;">
     <div class="carousel-container">
       <div class="carousel-slide fade">
-        <img src="https://images.unsplash.com/photo-1588854337119-3e7d53c24f9a" alt="Raised Panel" />
+        <img src="images/raised panel.png" alt="Raised Panel" />
       </div>
       <div class="carousel-slide fade">
-        <img src="https://images.unsplash.com/photo-1591126140583-c9a648b6c57e" alt="Shaker White" />
+        <img src="images/shaker.png" alt="Shaker" />
       </div>
       <div class="carousel-slide fade">
-        <img src="https://images.unsplash.com/photo-1595526114035-1099f9c472bb" alt="Modern Flat" />
+        <img src="images/modernflat.png" alt="Modern Flat / Euro" />
       </div>
       <div class="carousel-slide fade">
-        <img src="https://images.unsplash.com/photo-1565182999561-18d8f1d9da6b" alt="Inset Premium" />
+        <img src="images/insetprem.png" alt="Inset Premium" />
       </div>
     </div>
   </div>
@@ -230,7 +229,7 @@ function carouselShow() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(carouselShow, 3000); // Change image every 3 seconds
+  setTimeout(carouselShow, 3000);
 }
 </script>
 
@@ -239,34 +238,25 @@ function carouselShow() {
   <div class="style-grid">
 
     <div class="style-card">
-      <img src="https://images.unsplash.com/photo-1600490047271-309c5f3d2ade" alt="Shaker Style">
+      <img src="images/shaker.png" alt="Shaker Style">
       <h3>Shaker</h3>
     </div>
 
     <div class="style-card">
-      <img src="https://images.unsplash.com/photo-1595526114035-1099f9c472bb" alt="Raised Panel">
+      <img src="images/raised panel.png" alt="Raised Panel">
       <h3>Raised Panel</h3>
     </div>
 
     <div class="style-card">
-      <img src="https://images.unsplash.com/photo-1591195854049-2e2e3d3b1a7d" alt="Modern Flat/Slab">
+      <img src="images/modernflat.png" alt="Modern Flat/Euro">
       <h3>Modern Slab / Euro</h3>
     </div>
 
     <div class="style-card">
-      <img src="https://images.unsplash.com/photo-1565182999561-18d8f1d9da6b" alt="Inset Cabinets">
+      <img src="images/insetprem.png" alt="Inset Cabinets">
       <h3>Inset Premium</h3>
     </div>
 
-    <div class="style-card">
-      <img src="https://images.unsplash.com/photo-1588854337119-3e7d53c24f9a" alt="Rustic Wood">
-      <h3>Rustic / Knotty Alder</h3>
-    </div>
-
-    <div class="style-card">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Custom">
-      <h3>Custom Built Cabinets</h3>
-    </div>
   </div>
 </section>
 
